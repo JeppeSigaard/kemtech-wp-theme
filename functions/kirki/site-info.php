@@ -11,6 +11,15 @@ if (class_exists('Kirki')){
         'theme_supports' => '', // Rarely needed.
     ) );
     
+    Kirki::add_field( 'info_logo', array(
+        'settings' => 'info_logo',
+        'label'    => __( 'Logo', 'smamo' ),
+        'section'  => 'site_info',
+        'type'     => 'image',
+        'priority' => 10,
+        'default'  => '',
+    ) );
+    
     Kirki::add_field( 'info_name', array(
         'settings' => 'info_name',
         'label'    => __( 'Navn', 'smamo' ),

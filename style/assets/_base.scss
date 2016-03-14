@@ -17,6 +17,7 @@ html,body{
     *{
         box-sizing:inherit;
         backface-visibility: inherit;
+        outline: none;
     }
 
     img{
@@ -31,3 +32,8 @@ html,body{
 ::-moz-selection {
         // background: #333;
     }
+
+a,a:active,a:visited,a:hover{
+    color: $anchor-color;
+    text-decoration: underline;
+}

@@ -1,5 +1,6 @@
 <?php 
 
+// Hent svg fil og inkluder, fra statics/svg
 function get_svg($path = false){
     if(!$path){return;}
     

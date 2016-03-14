@@ -1,5 +1,9 @@
 <?php 
 
+/*
+Funktionsbibliotek til undertitel ( meta : subtitle )
+*/
+
 function get_the_subtitle($id = false){
     if(!$id){
         global $post;

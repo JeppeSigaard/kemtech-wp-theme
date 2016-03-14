@@ -1,0 +1,133 @@
+.hero-banner{
+    min-height: calc( 100vh - 65px);
+    @extend %fill-bg;
+    position: relative;
+    color: white;
+    background-color: $color-dark;
+    
+    
+    >.inner{
+        @include center(true,true);
+        margin-top: -70px;
+        transform-style: preserve-3d;
+        text-align: center;
+    }
+    
+    .home-description{
+        @extend %contrast-font;
+        font-size: 250%;
+        font-weight:900;
+        text-transform: uppercase;
+        text-shadow: $base-shadow;
+        width: 640px;
+        margin-bottom:40px;
+    }
+    
+    #product-search-form{
+        position:relative;
+        display: inline-block;
+        padding: 15px;
+        background: white;
+        box-shadow: $base-shadow;
+        font-size: 0;
+        
+        input{
+            font-size: 16px;
+            outline: none;
+            display: inline-block;
+            width: 280px;
+            height: 50px;
+            line-height:50px;
+            border: 1px solid $color-dark-2;
+            vertical-align: top;
+            padding: 0px 10px;
+            margin-right: 5px;
+            color: $base-color;
+            font-weight: 300;
+            z-index: 1;
+            
+            &::-webkit-input-placeholder { font-style: italic; font-weight: inherit; }
+            &::-moz-placeholder { font-style: italic; font-weight: inherit; } 
+            &:-ms-input-placeholder { font-style: italic; font-weight: inherit; }
+            &:-moz-placeholder { font-style: italic; font-weight: inherit; }
+        }
+        
+        a{
+            display: inline-block;
+            height: 50px;
+            width: 55px;
+            fill: white;
+            background: $color-blue;
+            vertical-align: top;
+            position: relative;
+            transition: background 120ms;
+            
+            svg{
+                @include center(true,true);
+                width: 28x;
+                height: 28px;
+            }
+            
+            &:hover{
+                background: lighten($color-blue,10);
+            }
+        }
+        
+    }
+}
+
+.hero-banner.search-mode{
+    background-image: none!important;
+    background-color: white;
+    height: auto;
+    overflow: auto;
+    
+    
+    >.inner{
+        top: 0;
+        left: 0;
+        right: 0;
+        transform: none;
+        text-align: left;
+        margin-top: 0px;
+        position: relative;
+        padding-bottom: 100px;
+        
+    }
+    
+    .home-description{
+        display: none;
+    }
+    
+    #product-search-form{
+        box-shadow: none;
+        display: block;
+        border-bottom: 1px solid $color-light;
+        
+        input{
+            
+            width: 239px;
+            
+            @media only screen and(min-width:480px){
+                
+                width: 320px;
+            }
+            
+            height: 40px;
+            line-height: 40px;
+            font-size: 14px;
+        }
+        
+        a{
+            height: 40px;
+            width: 45px;
+            
+            svg{
+                width: 24px;
+                height: 24px;
+            }
+        }
+    }
+
+    
+}

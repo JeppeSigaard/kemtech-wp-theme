@@ -1,0 +1,146 @@
+$header-height: 65px;
+
+.site-header{
+    height: $header-height;
+    position: relative;
+    
+    .inner{
+        position: fixed;
+        background: white;
+        box-shadow: $base-shadow;
+        z-index:10;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: $header-height;
+        overflow: hidden;
+        padding: 0px 20px;
+    }
+    
+}
+
+.header-logo{
+    display: inline-block;
+    height: inherit;
+    width:120px;
+    position:relative;
+    
+    
+    
+    svg,
+    img{
+        @include center(false,true);
+        width: 100%;
+        margin-top: -3px;
+    }
+    
+    svg{
+        fill: $color-blue;
+        
+        
+        rect{
+            transition: fill 400ms;
+        }
+        
+    }
+    
+    &:hover svg{
+        
+        .lines rect:first-child{
+            fill: $logo-color-green;
+        }
+        
+        .lines rect:nth-child(2){
+            fill: $logo-color-red;
+        }
+        
+    }
+}
+
+.header-hamburger{
+    display: block;
+    position: relative;
+    font-size: 0;
+    width: 80px;
+    height: $header-height;
+    float:right;
+    margin-right: 60px;
+    transition: margin-right 120ms;
+    
+    svg{
+        fill: $color-dark;
+        width: 30px;
+        height: 30px;
+        @include center(true,true);
+    }
+    
+    .hamburger-close{
+        
+        display: none;
+    }
+    
+    @media only screen and(min-width:768px){
+        
+        display: none;
+    }
+    
+}
+
+
+.show-menu .header-hamburger{ 
+    margin-right: -20px;
+    
+    svg{
+        display: none;
+
+        &.hamburger-close{
+            display: block;
+        }
+    }
+}
+
+
+a.header-download{
+    position: absolute;
+    right: 0;
+    width: 80px;
+    height: $header-height;
+    background: $color-yellow;
+    color: white;
+    fill: white;
+    text-decoration: none;
+    transition: margin-top 200ms, right 120ms;
+    
+    svg{
+        @include center(true,true);
+        width: 28px;
+        height: 28px;
+        transition: inherit;
+    }
+    
+    span{
+        display: block;
+        @include center(true,true);
+        margin-top: -100%;
+        text-align: center;
+        transition: inherit;
+        font-weight: 700;
+        font-size:80%;
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
+    
+    
+    &:hover{
+        svg{
+            margin-top: 100%;
+        }
+        span{
+            margin-top: 0;
+        }
+    }
+}
+.show-menu a.header-download{
+    right: -80px;
+    
+} 

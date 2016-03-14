@@ -3,7 +3,7 @@
 get_template_part('template-parts/wrapper/start');
 
 
-if(is_home() || is_front_page()){ get_template_part('templates/home');}
+if(is_home() || is_front_page() || is_search() ) { get_template_part('templates/home');}
 
 elseif(is_archive() || is_tax()){
     get_template_part('templates/archive');

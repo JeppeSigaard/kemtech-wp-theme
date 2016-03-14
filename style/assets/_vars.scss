@@ -1,13 +1,14 @@
 $base-color: #333;
 $base-bg: white;
 $base-font: Arial, sans-serif;
+$contrast-font: 'Raleway', sans-serif;
 $base-font-weight: 400;
 
 $base-font-size: 14px;
 $base-font-size-480: 15px;
 $base-font-size-640: 16px;
 $base-font-size-960: 16px;
-$base-line-height: 1.5;
+$base-line-height: 1.7;
 
 $color-light: #e9e9e9;
 $color-light-2: #e5e5e5;
@@ -16,4 +17,29 @@ $color-light-4: #f5f5f5;
 $color-dark: #333333;
 $color-dark-2: #454545;
 
+$color-yellow: #ebc700;
+$color-blue: #0f5588;
+
+$logo-color-green: #6CBC78;
+$logo-color-red: #B66A7A;
+$logo-color-blue: #25356A;
+
 $anchor-color: #36abd6;
+
+$base-shadow:1px 1px 1px rgba(black,.1);
+
+/* Form vars */
+$input-padding:4px 0px;
+$input-transition-time:100ms;
+$input-font-size:95%;
+$label-active-size:18px;
+$input-border-width:1px;
+$monkey-white:#fff;
+$monkey-light:#f0f0f0;
+$monkey-green:#699;
+$monkey-red:#f66;
+$monkey-black:#333;
+$monkey-black-2:#353535;
+$base-margin:10px;
+
+$button-shadow:1px 1px 1px rgba(black,.1);
