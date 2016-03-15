@@ -117,6 +117,7 @@
         background-color: $color-light-2;
         height: 264px;
         @extend %fill-bg;
+        
         @media only screen and(min-width:768px){
             
             height: 0;
@@ -125,21 +126,26 @@
         
         
         @media only screen and(min-width:1280px){
-            
             height: 480px;
-            padding-bottom: 0;
-            
+            padding-bottom: 0; 
         }
     }
     
     .header-text{
         position: absolute;
-        bottom: 20px;
-        @include center(true,false);
-        width: 640px + $base-margin * 4;
+        left: 0;
+        right: 0;
+        bottom: 0;
         background: rgba(white,.95);
-        box-shadow: $base-shadow;
         padding: $base-margin*2;
+        
+        
+        @media only screen and(min-width:1040px){
+            bottom: 20px;
+            @include center(true,false);
+            width: 640px + $base-margin * 4;
+            box-shadow: $base-shadow;
+        }
         
         h1{
             color: $color-blue;
@@ -161,7 +167,7 @@
         }
         
         h1{
-            color:red;
+            color: red;
             font-size: 0;
             &:after{ 
                 content: 'h1 is reserved for document base only. please use h2 instead';
@@ -169,5 +175,16 @@
             }
         }
         
+    }
+}
+
+@media only screen and(min-width:1040px){
+
+    .single-produkt{
+
+        .single-content .header-text{
+            left: 20px;
+            transform: none;
+        }
     }
 }

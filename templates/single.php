@@ -11,6 +11,7 @@
         </main>
         <aside class="content-aside fixed-aside">
            <div class="inner">
+               <?php get_template_part('template-parts/aside/product-search'); ?>
            </div>
         </aside>
     </div>

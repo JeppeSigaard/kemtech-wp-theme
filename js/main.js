@@ -17,3 +17,4 @@ $('meta[name=ajax-url]').remove();
 // @koala-append 'modules/toggle-menu.js';
 // @koala-append 'modules/product-search.js';
 // @koala-append 'modules/sync-scroll.js';
+// @koala-append 'modules/doubletab.js';

@@ -19,6 +19,7 @@ function smamo_prod_fetch(){
             
             'id' => get_the_ID(),
             'title' => get_the_title(),
+            'subtitle' => get_the_subtitle(),
             'desc' => wp_trim_words(get_the_content(),$num_words = 20),
             'permalink' => get_the_permalink(),
             'img' =>  (isset($image_url[0])) ? $image_url[0] : false,

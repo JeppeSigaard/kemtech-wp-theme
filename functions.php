@@ -18,7 +18,7 @@ get_functions_part(array('fetch-products'),'ajax');
 get_functions_part(array('product'),'post-types');
 
 // meta-box
-get_functions_part(array('init'),'meta-box');
+get_functions_part(array('init','filters','product_vars'),'meta-box');
 
 // taxonomies
 get_functions_part(array('product-cat'),'tax');
