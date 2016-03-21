@@ -1,0 +1,39 @@
+$bc-color: #999;
+.breadcrumbs{
+    padding: 30px 30px 30px;
+    background-color: rgba(white,.5); 
+    font-size: 90%;
+    
+    li a,
+    li span{
+        text-decoration: none;
+        color: $bc-color;
+        padding:25px 0px 10px;
+        display: block;
+        line-height: 1.2;
+        transition: color 150ms;
+    }
+    
+    li a:hover{
+        color: $color-blue;
+    }
+    
+    li.bc-parent a,
+    li.bc-parent span{
+        border-bottom: 1px solid lighten($bc-color, 20);
+        padding-top: 25px;
+        
+        &:after{
+            display: inline-block;
+            float: right;
+            content: '';
+            width: 4px;
+            height: 4px;
+            margin-top: 7px;
+            border: solid lighten($bc-color, 10);
+            border-width: 1px 1px 0px 0px;
+            transform: rotate(45deg);
+        }
+        
+    }
+}

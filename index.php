@@ -9,6 +9,10 @@ elseif(is_archive() || is_tax()){
     get_template_part('templates/archive');
 }
 
+elseif(is_singular() && '' === get_post_type( get_the_ID() )){
+    get_template_part('templates/single-product');
+}
+
 elseif(is_single() || is_page()){
     get_template_part('templates/single');
 }

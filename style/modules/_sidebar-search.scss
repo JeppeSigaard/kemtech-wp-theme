@@ -1,0 +1,31 @@
+.content-aside .sidebar-search{
+    height: auto;
+    min-height: 0px;
+    background-color:rgba(black,.1);
+    
+    form{
+        width: 100%;
+        padding: 30px 20px;
+        background-color: transparent;
+        box-shadow: none;
+    }
+    
+    input[type="text"]{
+        height:40px;
+        line-height: 40px;
+        width: calc( 100% - 50px);
+        font-size: 14px;
+        border-color: rgba(black,.3);
+    }
+    a{
+        height: 40px;
+        width: 45px;
+        float: right;
+        background: rgba(black,.3);
+        
+        svg{
+            height:20px;
+            width:20px;
+        }
+    }
+}

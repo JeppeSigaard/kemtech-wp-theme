@@ -1,4 +1,4 @@
-.hero-banner{
+.hero-banner, .sidebar-search{
     min-height: calc( 100vh - 65px);
     @extend %fill-bg;
     position: relative;
@@ -23,7 +23,7 @@
         margin-bottom:40px;
     }
     
-    #product-search-form{
+    form{
         position:relative;
         display: inline-block;
         padding: 15px;
@@ -31,7 +31,7 @@
         box-shadow: $base-shadow;
         font-size: 0;
         
-        input{
+        input[type="text"]{
             font-size: 16px;
             outline: none;
             display: inline-block;

@@ -10,7 +10,7 @@
             </article>
         </main>
         <aside class="content-aside fixed-aside">
-           <?php get_template_part('template-parts/aside/main'); ?>
+            <?php get_template_part('template-parts/aside/main'); ?>
         </aside>
     </div>
 </section>

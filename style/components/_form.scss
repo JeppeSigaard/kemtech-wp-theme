@@ -34,7 +34,7 @@ form.sheeted-form{
     box-shadow: $base-shadow;
     margin:auto;
 }
-form{
+form:not(.search-form){
     
     &.small{
         max-width:320px;

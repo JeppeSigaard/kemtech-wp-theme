@@ -1,4 +1,5 @@
-.single-content{
+.single-content,
+.archive-content{
     display: block;
     overflow: auto;
     
@@ -7,7 +8,7 @@
     }
     aside{
         background: $color-light-3;
-        height: calc(100vh - #{$header-height});
+        overflow: hidden;
     }
     
     @media only screen and(min-width:768px){
@@ -22,6 +23,7 @@
             top: $header-height;
             width: 240px;
             min-height: 230px;
+            height: calc(100vh - #{$header-height});
             
             &.bottom{
                 position: absolute;

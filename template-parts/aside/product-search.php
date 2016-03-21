@@ -1,11 +1,10 @@
 <div class="sidebar-search">
-    <form method="get" action="<?php bloginfo('url') ?>">
+    <form class="search-form" method="get" action="<?php bloginfo('url') ?>">
         <div>
-            <input type="text" name="s"> 
-            <label>Søg blandt vores produkter</label>
-        </div>
-        <div>
-            <input type="submit" value="søg">
+            <input type="text" name="s" placeholder="Find produkt"> 
+            <a href="#" class="submit-search sidebar-submit-search">
+                <?php get_svg('search') ?>
+            </a>
         </div>
     </form>
 </div>

@@ -7,5 +7,5 @@
     <meta name="ajax-url" content="<?php echo admin_url('admin-ajax.php'); ?>">
     <?php wp_head(); ?>
 </head>
-<body <?php body_class( (wp_is_mobile()) ? 'is-mobile' : ''); ?>>
+<body <?php body_class( ( wp_is_mobile() ) ? 'is-mobile' : '' . ( is_customize_preview() ) ? ' is-customizer' : ''); ?>>
 <?php get_template_part('template-parts/header/site-header'); ?>
