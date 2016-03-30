@@ -1,0 +1,41 @@
+.product-gallery{
+
+    position: absolute;
+    height: 100%;
+    top: 0;
+    right: 0;
+    padding:10px;
+    
+    .inner{
+        border: 5px solid $color-light-2;
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+    
+    
+    .gallery-item.preview{
+        border: 5px solid $color-light-2;
+        flex-grow: 1;
+        display: flex;
+        width: 150px;
+        position: relative;
+        
+        
+    }
+    
+    [data-more]:before{
+            content: '';
+            @extend %fill-all;
+            display: block;
+            background-color: rgba($color-blue,.3);
+        }
+        
+    [data-more]:after{
+        content: attr(data-more);
+        @include center(true,true);
+        color: white;
+        font-size:125%;
+        font-weight: 900;
+    }
+}

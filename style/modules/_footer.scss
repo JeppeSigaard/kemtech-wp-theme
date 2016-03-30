@@ -4,4 +4,53 @@
     
     background: $color-light;
     color: lighten($color-dark-2,20);
+    
+    .inner{
+        max-width: 480px;
+        padding: 50px 10px;
+        margin: auto;
+        text-align: center;
+        font-size: 12px;
+        @media only screen and(min-width:480px){
+            font-size: inherit;
+        }
+        
+    }
+    
+    div{
+        margin-bottom:20px;
+    }
+    
+    div span{
+    
+        @extend %article-font-style;
+        
+        &:after{
+            content: '\b7';
+            width: 20px;
+            text-align: center;
+            display: inline-block;
+        }
+        
+        &:last-child:after{
+            display: none;
+        }
+        
+        a{
+            text-decoration: none;
+            color: inherit;
+        }
+    }
 }
+
+.footer-logo{
+    
+    display: inline-block;
+    width: 180px;
+    margin-bottom:30px;
+    
+    svg{
+        fill:#999;
+    }
+}
+

@@ -9,4 +9,5 @@
         } 
     ?>
     </div>
+    <?php if ('produkt' === get_post_type( get_the_ID() )) { get_template_part( 'template-parts/common/product-gallery' );} ?>
 </header>

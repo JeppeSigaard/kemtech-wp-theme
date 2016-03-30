@@ -6,6 +6,7 @@ function smamo_add_boxes($mb){
     require 'subtitle.php';
     require 'featured_article.php';
     require 'produkt.php';
+    require 'product-gallery.php';
 return $mb;
 
 }
