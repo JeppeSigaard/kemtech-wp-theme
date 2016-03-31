@@ -8,7 +8,6 @@ $image_url = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'ful
 <?php 
 if (get_post_meta(get_the_ID(),'item_gallery_active',true) === '1') :
 $images = get_post_meta(get_the_ID(), 'gallery_items',false);
-$images[] = get_post_meta(get_the_ID(),'product_param_img',true);
 $img_urls = array();
 
 foreach($images as $img){

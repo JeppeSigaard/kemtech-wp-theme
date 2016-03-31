@@ -104,13 +104,15 @@ var prodSearch = {
         resultContainer.empty();
 
         var t = 0,
-            maxRes = 10;
+            maxRes = 10,
+            incs = [];
 
         // Søg på titler
         var titleMatches = prodSearch.substringMatcher(prodSearch.titles,content);
         titleMatches.forEach(function(i){
             t ++;
-            if(t < maxRes){
+            if(t < maxRes && incs.indexOf(i) === -1){
+                incs.push(parseInt(i));
                 resultContainer.append(prodSearch.makeNode(i,content));
             }
         });
@@ -126,7 +128,25 @@ var prodSearch = {
         var descMatches = prodSearch.substringMatcher(descriptions,content);
         descMatches.forEach(function(i){
             t ++;
-            if(t < maxRes){
+            if(t < maxRes && incs.indexOf(i) === -1){
+                incs.push(parseInt(i));
+                resultContainer.append(prodSearch.makeNode(i,content));
+            }
+        });
+        
+        // Søg på langt indhold
+        descriptions = [];
+        for (var prop in prodSearch.data) {
+            if( prodSearch.data.hasOwnProperty( prop ) ) {
+                descriptions[prop] = prodSearch.data[prop].long_desc;
+            } 
+        }
+        
+        descMatches = prodSearch.substringMatcher(descriptions,content);
+        descMatches.forEach(function(i){
+            t ++;
+            if(t < maxRes && incs.indexOf(i) === -1){
+                incs.push(parseInt(i));
                 resultContainer.append(prodSearch.makeNode(i,content));
             }
         });
