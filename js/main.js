@@ -6,6 +6,7 @@ $('meta[name=ajax-url]').remove();
 // @koala-append 'assets/js.cookie.js';
 // @koala-append 'assets/styledselect.js';
 // @koala-append 'assets/putCursorAtEnd.js';
+// @koala-append 'assets/lightbox.js';
 
 // @koala-append 'components/data-img.js';
 // @koala-append 'components/form.js';
@@ -18,3 +19,4 @@ $('meta[name=ajax-url]').remove();
 // @koala-append 'modules/product-search.js';
 // @koala-append 'modules/sync-scroll.js';
 // @koala-append 'modules/doubletab.js';
+// @koala-append 'modules/lightbox-settings.js';

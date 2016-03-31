@@ -1,41 +1,85 @@
 .product-gallery{
 
-    position: absolute;
-    height: 100%;
-    top: 0;
-    right: 0;
-    padding:10px;
-    
-    .inner{
-        border: 5px solid $color-light-2;
-        display: flex;
-        flex-direction: column;
+    display: none;
+    @media only screen and(min-width:960px){
+        display: block;
+        position: absolute;
         height: 100%;
+        top: 0;
+        right: 0;
+        padding:10px;
+
+        .inner{
+            border: 5px solid $color-light-2;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+
+
+        .gallery-item.preview{
+            border: 5px solid $color-light-2;
+            flex-grow: 1;
+            display: flex;
+            width: 150px;
+            position: relative;
+
+
+        }
+
+        [data-more]:before{
+                content: '';
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                display: block;
+                background-color: rgba($color-blue,.3);
+            }
+
+        [data-more]:after{
+            content: attr(data-more);
+            @include center(true,true);
+            color: white;
+            font-size:125%;
+            font-weight: 900;
+        }
+    }
+}
+.main-image-toggle{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    
+    svg{
+        fill: #ccc;
     }
     
-    
-    .gallery-item.preview{
-        border: 5px solid $color-light-2;
-        flex-grow: 1;
-        display: flex;
-        width: 150px;
-        position: relative;
-        
+    .expand{
+        display: none;
         
     }
     
-    [data-more]:before{
-            content: '';
-            @extend %fill-all;
+    @media only screen and(min-width:960px){
+        
+        .expand{
             display: block;
-            background-color: rgba($color-blue,.3);
         }
         
-    [data-more]:after{
-        content: attr(data-more);
-        @include center(true,true);
-        color: white;
-        font-size:125%;
-        font-weight: 900;
+        .images{
+            display: none;
+        }
     }
+    
+}
+.lb-outerContainer{
+    border-radius: 0;
+}
+.lb-data .lb-close{
+    display: none;
+    
 }

@@ -142,6 +142,11 @@
         padding: $base-margin*2;
         
         
+        @media only screen and(min-width:960px){
+            max-width: calc(100% - 200px);
+        }
+        
+        
         @media only screen and(min-width:1040px){
             bottom: 20px;
             @include center(true,false);
@@ -161,12 +166,9 @@
     .article-content{
         
         padding: 50px 20px 70px;
-        
-        p,h1,h2,h3,h4,h5,h6,quote,em,ul,ol,a,strong,img,svg,iframe,.video-wrap{
-            max-width: 640px;
-            margin-left: auto;
-            margin-right: auto;
-        }
+        max-width: 680px;
+        margin-left: auto;
+        margin-right: auto;
         
         h1{
             color: red;

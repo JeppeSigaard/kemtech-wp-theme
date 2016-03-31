@@ -1,4 +1,7 @@
 .sidebar-info{
+    @media only screen and(max-width:768px){
+        display: none;
+    }
     
     .info-logo{
         max-width: 180px;

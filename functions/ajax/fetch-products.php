@@ -23,7 +23,21 @@ function smamo_prod_fetch(){
             'desc' => wp_trim_words(get_the_content(),$num_words = 20),
             'permalink' => get_the_permalink(),
             'img' =>  (isset($image_url[0])) ? $image_url[0] : false,
+            'downloads' => array(
+                'data' => get_post_meta(get_the_ID(),'download_data',true),
+                'approve' => get_post_meta(get_the_ID(),'download_data',true),
+            ),
         );
+        
+        $vars = array();
+        $product_var = get_post_meta(get_the_ID(),'product_var',true);
+        foreach($product_var as $var){
+            if (isset($var['order_number'])){
+                $vars[] = $var['order_number'];
+            }
+        }
+        
+        $response['data'][get_the_ID()]['vars'] = $vars;
     }
 
     wp_die(json_encode($response));

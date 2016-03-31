@@ -9,7 +9,7 @@ elseif(is_archive() || is_tax()){
     get_template_part('templates/archive');
 }
 
-elseif(is_singular() && '' === get_post_type( get_the_ID() )){
+elseif(is_singular() && 'produkt' === get_post_type( get_the_ID() )){
     get_template_part('templates/single-product');
 }
 

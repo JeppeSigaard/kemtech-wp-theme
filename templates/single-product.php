@@ -6,6 +6,8 @@
                 <?php get_template_part('template-parts/common/article-header'); ?>
                 <div class="article-content article-base">
                     <?php the_content(); ?>
+                    <?php get_template_part('template-parts/common/product-vars'); ?>
+                    <?php get_template_part('template-parts/common/product-downloads'); ?>
                 </div>
             </article>
         </main>
