@@ -68,3 +68,28 @@ $mb[] = array(
         ),
     ),
 );
+
+$mb[] = array(
+    'id' => 'product_downloads',
+    'title' => __( 'Downloads', 'rwmb' ),
+    'post_types' => array('produkt'),
+    'context' => 'side',
+    'priority' => 'default',
+    'autosave' => true,
+    'fields' => array(
+        
+        array(
+            'name' => __('Vedhæft datablad','rwmb'),
+            'id' => 'download_data',
+            'type' => 'file_advanced',
+            'max_file_uploads' => 1,
+        ),
+        
+         array(
+            'name' => __('Vedhæft godkendelser','rwmb'),
+            'id' => 'download_approve',
+            'type' => 'file_advanced',
+            'max_file_uploads' => 1,
+        ),
+    ),
+);

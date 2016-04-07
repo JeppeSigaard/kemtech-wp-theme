@@ -22,7 +22,7 @@ if ( $featured_articles->have_posts() ) :
                         <h3><?php the_title(); ?></h3>
                     </header>
                     <div class="article-content">
-                        <?php echo wp_trim_words(get_the_excerpt(),$num_words = 25, $more = ' ...'); ?>
+                        <?php echo wp_trim_words(get_the_excerpt(),$num_words = 20, $more = ' ...'); ?>
                     </div>
                 </article>
             </a>

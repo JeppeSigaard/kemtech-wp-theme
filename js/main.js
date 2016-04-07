@@ -20,3 +20,4 @@ $('meta[name=ajax-url]').remove();
 // @koala-append 'modules/sync-scroll.js';
 // @koala-append 'modules/doubletab.js';
 // @koala-append 'modules/lightbox-settings.js';
+// @koala-append 'modules/data-href.js';

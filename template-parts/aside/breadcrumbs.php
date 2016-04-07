@@ -1,21 +1,46 @@
 <?php 
-$parents = false;
-$siblings = false;
+if('produkt' === get_post_type(get_the_ID())) :
+$terms = wp_get_post_terms(get_the_ID(),'kategori');
+?>
 
-if( is_page() ){
+<div class="breadcrumbs">
+    <ul>
+        <li class="bc-parent">
+            <a href="<?php bloginfo('url') ?>"><?php bloginfo('title') ?></a>
+        </li>
+        <?php if (is_post_type_archive()) : ?>
+        <li class="bc-child current">
+            <span>Produkter</span>
+        </li>
+        <?php elseif (is_tax()) : ?>
+        <li class="bc-parent">
+            <a href="<?php echo get_post_type_archive_link( 'produkt' ); ?>">Produkter</a>
+        </li>
+        <li class="bc-child current">
+            <span><?php echo $terms[0]->name ?></span>
+        </li>
+        <?php else : ?>
+        <li class="bc-parent">
+            <a href="<?php echo get_post_type_archive_link( 'produkt' ); ?>">Produkter</a>
+        </li>
+        <li class="bc-parent">
+            <a href="<?php echo get_term_link($terms[0]->term_id); ?>"><?php echo $terms[0]->name ?></a>
+        </li>
+        <li class="bc-child current">
+            <span> <?php the_title(); ?> </span>
+        </li>
+        <?php endif; ?>
+    </ul>
+</div>
+<?php 
+
+elseif( is_page() ) :
     $parents = get_ancestors(get_the_ID(),'page');
     
-    if (!isset($parents[0])) {$parents[0] = get_the_ID();}
-    
-    $children = get_children(array(
-        'post_type'   => array('page','post','produkt'), 
-        'numberposts' => -1,
-        'post_parent' =>  $parents[0],
-    ));
-   
-}
+    if (!isset($parents[0])) {$parents = false;}
 
 ?>
+
 <div class="breadcrumbs">
     <ul>
         <li class="bc-parent">
@@ -25,24 +50,12 @@ if( is_page() ){
         <li class="bc-parent">
             <a href="<?php echo get_permalink($p); ?>"><?php echo get_the_title($p) ?></a>
         </li>
-        <?php else : ?>
-            <li class="bc-parent current">
-                <span> <?php the_title(); ?> </span>
-            </li>
         <?php endif; endforeach; endif; ?>
-        
-        <?php if (!empty($children)) : foreach($children as $p) : if ($p->ID !== get_the_ID()) : ?>
-            <li class="bc-child">
-                <a href="<?php echo get_permalink($p->ID); ?>"><?php echo get_the_title($p->ID) ?></a>
-            </li>
-        <?php else : ?>
-            <li class="bc-child current">
-                <span> <?php the_title(); ?> </span>
-            </li>
-        <?php endif; endforeach; else : ?>
-            <li class="bc-child current">
-                <span> <?php the_title(); ?> </span>
-            </li>
-        <?php endif; ?>
+        <li class="bc-child current">
+            <span> <?php the_title(); ?> </span>
+        </li>
     </ul>
 </div>
+
+
+<?php endif; ?>

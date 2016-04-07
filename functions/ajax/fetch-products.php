@@ -25,8 +25,8 @@ function smamo_prod_fetch(){
             'permalink' => get_the_permalink(),
             'img' =>  (isset($image_url[0])) ? $image_url[0] : false,
             'downloads' => array(
-                'data' => get_post_meta(get_the_ID(),'download_data',true),
-                'approve' => get_post_meta(get_the_ID(),'download_data',true),
+                'data' => wp_get_attachment_url(get_post_meta(get_the_ID(),'download_data',true)),
+                'approve' => wp_get_attachment_url(get_post_meta(get_the_ID(),'download_data',true)),
             ),
         );
         

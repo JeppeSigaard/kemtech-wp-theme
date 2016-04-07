@@ -16,8 +16,8 @@
             </footer>
         </div>
         <div class="result-links">
-            <div class="download-link download-data" data-href="<?php echo get_post_meta(get_the_ID(),'download_data',true)?>">Hent Datablad</div>
-            <div class="download-link download-approve" data-href="<?php echo get_post_meta(get_the_ID(),'download_approve',true)?>">Hent Godkendelser</div>
+            <div class="download-link download-data" data-href="<?php echo wp_get_attachment_url(get_post_meta(get_the_ID(),'download_data',true)) ?>">Hent Datablad</div>
+            <div class="download-link download-approve" data-href="<?php echo wp_get_attachment_url(get_post_meta(get_the_ID(),'download_approve',true))?>">Hent Godkendelser</div>
         </div>
     </div>
 </a>

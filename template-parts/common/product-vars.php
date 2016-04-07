@@ -6,7 +6,7 @@ function get_key($param){return sanitize_title('param-'.get_the_ID() . $param);}
 ?>
    
 <section class="product-vars">
-    <h2 class="subsection-heading">Produktspecifikationer <a href="<?php echo $ref_draw[0] ?>" data-lightbox="product-drawing">Se referencetegning</a></h2>
+    <h2 class="subsection-heading">Specifikationer <a href="<?php echo $ref_draw[0] ?>" data-lightbox="product-drawing">Se referencetegning</a></h2>
     <table class="inner">    
         <thead>
             <tr>

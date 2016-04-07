@@ -5,22 +5,57 @@
     color: white;
     background-color: $color-dark;
     
+    &:before{
+        @extend %fill-all;
+        content: '';
+        background-color: rgba(black,.3);
+    }
+    
     
     >.inner{
         @include center(true,true);
         margin-top: -70px;
         transform-style: preserve-3d;
         text-align: center;
+        width: 100%;
+        max-width:680px;
+        padding: 0px 10px;
+        @media only screen and(min-width:480px){
+            padding: 0px 20px;
+        }
+        
     }
     
     .home-description{
-        @extend %contrast-font;
-        font-size: 250%;
-        font-weight:900;
-        text-transform: uppercase;
         text-shadow: $base-shadow;
-        width: 640px;
-        margin-bottom:40px;
+        text-align: left;
+        
+        h1{
+            @extend %contrast-font;
+             margin-bottom:10px;  
+            font-size: 150%;
+            @media only screen and(min-width:640px){
+                
+                font-size: 190%;
+                margin-bottom:30px;  
+            }
+            
+            font-weight:900;
+            margin-bottom:.7rem;
+            line-height: 1.2;
+            text-transform: uppercase;    
+        }
+        
+        p{
+            line-height: 1.4;
+             margin-bottom:20px;  
+            
+            @media only screen and(min-width:640px){
+                font-size: 130%;
+                 margin-bottom:40px;  
+            }
+        }
+        
     }
     
     form{
@@ -73,6 +108,21 @@
             }
         }
         
+        @media only screen and(max-width:480px){
+        
+            input[type="text"]{
+                font-size:13px;
+                height: 40px;
+                line-height: 40px;
+                width: 220px;
+            }
+            
+            a{
+                height: 40px;
+                width:45px;
+            }
+        }
+        
     }
 }
 
@@ -81,6 +131,10 @@
     background-color: white;
     height: auto;
     overflow: auto;
+    
+    &:before{
+        display: none;
+    }
     
     
     >.inner{
@@ -91,7 +145,8 @@
         text-align: left;
         margin-top: 0px;
         position: relative;
-        padding-bottom: 100px;
+        padding: 0px 0px 100px;
+        max-width: none;
         
     }
     
