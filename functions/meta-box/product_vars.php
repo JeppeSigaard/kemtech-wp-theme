@@ -15,15 +15,16 @@ function smamo_add_product_vars($mb){
 
     if($post_id){
         $post_params = get_post_meta($post_id,'product_param',true);
-        
-        foreach($post_params as $p){
+        if(!empty($post_params)){
+            foreach($post_params as $p){
 
-            $fields_array[] = array(
-                'name'  => $p,
-                'id'    => sanitize_title('param-'.$post_id . $p),
-                'type' => 'text',
-            );
+                $fields_array[] = array(
+                    'name'  => $p,
+                    'id'    => sanitize_title('param-'.$post_id . $p),
+                    'type' => 'text',
+                );
 
+            }
         }
     }
 

@@ -139,8 +139,12 @@
         right: 0;
         bottom: 0;
         background: rgba(white,.95);
-        padding: $base-margin*2;
+        padding: $base-margin;
         
+        @media only screen and(min-width:480px){
+            
+            padding: $base-margin*2;
+        }
         
         @media only screen and(min-width:960px){
             max-width: calc(100% - 200px);
@@ -156,16 +160,39 @@
         
         h1{
             color: $color-blue;
-            font-size: 32px;
+            font-size: 22px;
+            @media only screen and(min-width:480px){font-size: 28px;}
+            @media only screen and(min-width:640px){font-size: 32px;}
+            
             font-family: $contrast-font;
             line-height: 1.1;
+        }
+        
+        .article-subtitle{
+            font-style: italic;
+            font-size: 120%;
+            line-height: 1.2;
+            margin-top: 10px;
+            display: block;
+            font-weight: bold;
+            color: #555;
         }
         
     }
     
     .article-content{
+        padding: 0px 10px 50px;
         
-        padding: 50px 20px 70px;
+        @media only screen and(min-width:480px){
+            
+            padding: 0px 20px 50px;
+        }
+        
+        @media only screen and(min-width:640px){
+            
+            padding: 50px 20px 70px;
+        }
+        
         max-width: 680px;
         margin-left: auto;
         margin-right: auto;
