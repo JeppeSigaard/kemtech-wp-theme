@@ -23,11 +23,13 @@ $terms = wp_get_post_terms(get_the_ID(),'kategori');
         <li class="bc-parent">
             <a href="<?php echo get_post_type_archive_link( 'produkt' ); ?>">Produkter</a>
         </li>
+        <?php if(!empty($terms)) : ?>
         <li class="bc-parent">
             <a href="<?php echo get_term_link($terms[0]->term_id); ?>"><?php echo $terms[0]->name ?></a>
         </li>
+        <?php endif; ?>
         <li class="bc-child current">
-            <span> <?php the_title(); ?> </span>
+            <span> <?php echo the_title(); ?> </span>
         </li>
         <?php endif; ?>
     </ul>

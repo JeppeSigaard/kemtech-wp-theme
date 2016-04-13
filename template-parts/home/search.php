@@ -5,7 +5,7 @@
             <p><?php echo get_theme_mod('long_description'); ?></p>
         </div>
         <form class="search-form" id="product-search-form">
-            <input name="s" type="text" id="product-search-field" placeholder="søg blandt vores produkter" autocomplete="off"<?php if ( is_search() ) { echo 'value="'.wp_strip_all_tags($_GET['s']).'"';} ?>>
+            <input name="s" type="text" id="product-search-field" placeholder="Søg blandt vores produkter" autocomplete="off"<?php if ( is_search() ) { echo 'value="'.wp_strip_all_tags($_GET['s']).'"';} ?>>
             <a href="#" class="submit-search">
                 <?php get_svg('search') ?>
             </a>
