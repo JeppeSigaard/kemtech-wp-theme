@@ -3,7 +3,7 @@
     <div class="inner">
         <main class="content-main" id="content-main">
             <article <?php post_class(); ?>>
-                <?php get_template_part('template-parts/common/article-header'); ?>
+                <?php get_template_part('template-parts/common/product-header'); ?>
                 <div class="article-content article-base">
                     <?php the_content(); ?>
                     <?php get_template_part('template-parts/common/product-details'); ?>

@@ -2,9 +2,9 @@
 
 if (class_exists('Kirki')){
     
-    Kirki::add_section( 'folder_link', array(
-        'title'          => __( 'Download folder' ),
-        'description'    => __( 'Tilføj henvisning til folder, som kan hentes fra mediebiblioteket' ),
+    Kirki::add_section( 'mailchimp', array(
+        'title'          => __( 'Mailchimp' ),
+        'description'    => __( 'Tilføj API tilgang til mailchimp' ),
         'panel'          => '', // Not typically needed.
         'priority'       => 160,
         'capability'     => 'edit_theme_options',
@@ -12,20 +12,21 @@ if (class_exists('Kirki')){
     ) );
     
     Kirki::add_field( 'smamo_config', array(
-        'settings' => 'folder_url',
-        'label'    => __( 'Fil', 'smamo' ),
-        'section'  => 'folder_link',
-        'type'     => 'upload',
+        'settings' => 'mailchimp_api',
+        'label'    => __( 'API nøgle', 'smamo' ),
+        'section'  => 'mailchimp',
+        'type'     => 'text',
         'priority' => 10,
         'default'  => '',
     ) );
     
     Kirki::add_field( 'smamo_config', array(
-        'settings' => 'folder_label',
-        'label'    => __( 'Tekst', 'smamo' ),
-        'section'  => 'folder_link',
+        'settings' => 'list_ID',
+        'label'    => __( 'Liste ID', 'smamo' ),
+        'section'  => 'mailchimp',
         'type'     => 'text',
         'priority' => 10,
         'default'  => '',
     ) );
+    
 }

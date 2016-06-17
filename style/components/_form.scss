@@ -377,7 +377,9 @@ form:not(.search-form){
     
 }
 
-a.form-button {
+a.form-button,
+input.form-button{
+    border: none;
     padding: 0px $base-margin;
     height: 35px;
     line-height: 35px;

@@ -24,13 +24,13 @@ var validateForm = function(form){
 
     var ready = true;
 
-    form.find('input').each(function(){
+    form.find('input, textarea').each(function(){
 
         if($(this).hasClass('error')){
             ready = false;
         }
 
-		if($(this).is(':required') || $(this).hasClass('required') && $(this).val() === ''){
+		if($(this).is(':required') && $(this).val() === '' || $(this).hasClass('required') && $(this).val() === ''){
 			$(this).removeClass('success').addClass('error');
 			ready = false;
 		}

@@ -11,7 +11,7 @@ if (class_exists('Kirki')){
         'theme_supports' => '', // Rarely needed.
     ) );
     
-    Kirki::add_field( 'front_banner_img', array(
+    Kirki::add_field( 'smamo_config', array(
         'settings' => 'front_banner_img',
         'label'    => __( 'Billede', 'smamo' ),
         'section'  => 'front_banner',

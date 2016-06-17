@@ -1,0 +1,22 @@
+.contact-form{
+    background-color: $color-light-3;
+    padding: 20px;
+    margin-top: 50px;
+    
+    &.loading{
+        
+        background-image: url('../statics/images/loading.gif');
+        bakcgorund-size: 24px;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        >div{
+            opacity: .3;
+        }
+        
+    }
+    
+    .error-msg{
+        color: $monkey-red;
+    }
+}

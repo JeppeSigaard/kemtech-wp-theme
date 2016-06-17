@@ -7,6 +7,7 @@ function smamo_add_boxes($mb){
     require 'featured_article.php';
     require 'produkt.php';
     require 'product-gallery.php';
+    require 'email.php';
 return $mb;
 
 }

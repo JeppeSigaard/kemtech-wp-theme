@@ -1,0 +1,18 @@
+.single-content .article-header.product-header{
+    height: auto;
+    padding: 20px;
+    
+    
+    .header-text{
+        position:relative;
+        left: auto;
+        bottom: auto;
+    }
+}
+
+@media only screen and(max-width:640px){
+    .single-produkt .single-content .article-content{
+        padding-top: 20px;
+    }
+}
+
