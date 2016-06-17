@@ -16,8 +16,11 @@
             </footer>
         </div>
         <div class="result-links">
-            <div class="download-link download-data" data-href="<?php echo wp_get_attachment_url(get_post_meta(get_the_ID(),'download_data',true)) ?>">Hent Datablad</div>
-            <div class="download-link download-approve" data-href="<?php echo wp_get_attachment_url(get_post_meta(get_the_ID(),'download_approve',true))?>">Hent Godkendelser</div>
+            <?php $data = esc_attr(get_post_meta(get_the_ID(),'download_data',true)); if ($data !== '') : ?>
+            <div class="download-link download-data" data-href="<?php echo wp_get_attachment_url($data) ?>">Hent Datablad</div>
+            <?php endif; $approve = esc_attr(get_post_meta(get_the_ID(),'download_approve',true)); if ($approve !== '') :?>
+            <div class="download-link download-approve" data-href="<?php echo wp_get_attachment_url($approve)?>">Hent Godkendelser</div>
+            <?php endif; ?>
         </div>
     </div>
 </a>

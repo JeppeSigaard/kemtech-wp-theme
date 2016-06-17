@@ -24,11 +24,14 @@ function smamo_prod_fetch(){
             'long_desc' => wp_trim_words(get_the_content(),$num_words = 200),
             'permalink' => get_the_permalink(),
             'img' =>  (isset($image_url[0])) ? $image_url[0] : false,
-            'downloads' => array(
-                'data' => wp_get_attachment_url(get_post_meta(get_the_ID(),'download_data',true)),
-                'approve' => wp_get_attachment_url(get_post_meta(get_the_ID(),'download_data',true)),
-            ),
+            'downloads' => array(),
         );
+        
+        $data = get_post_meta(get_the_ID(),'download_data',true);
+        $response['data'][get_the_ID()]['downloads']['data'] = ($data !== '' ? wp_get_attachment_url($data) : false);
+        
+        $approve = get_post_meta(get_the_ID(),'download_approve',true);
+        $response['approve'][get_the_ID()]['downloads']['approve'] = ($approve !== '' ? wp_get_attachment_url($approve) : false);
         
         $vars = array();
         $product_var = get_post_meta(get_the_ID(),'product_var',true);

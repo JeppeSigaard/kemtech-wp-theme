@@ -10,3 +10,7 @@ function theme_enqueue_scripts(){
     wp_enqueue_script('theme-script', get_template_directory_uri() . '/js/main.min.js' , array('jq'), false, true);
     
 }
+
+add_action('admin_enqueue_scripts',function(){
+   wp_enqueue_script('smamo_admin_script',get_template_directory_uri() .'/js/admin/script.js',array('jquery'),'1',true);
+});

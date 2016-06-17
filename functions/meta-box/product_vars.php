@@ -12,7 +12,8 @@ function smamo_add_product_vars($mb){
         'id' => 'order_number',
         'type' => 'text',
     );
-
+    
+    
     if($post_id){
         $post_params = get_post_meta($post_id,'product_param',true);
         if(!empty($post_params)){
@@ -27,7 +28,7 @@ function smamo_add_product_vars($mb){
             }
         }
     }
-
+    
     $mb[] = array(
         'id' => 'product_vars',
         'title' => __( 'Produktvariationer', 'rwmb' ),
@@ -41,7 +42,7 @@ function smamo_add_product_vars($mb){
                 'id'    => "product_var",
                 'type' => 'group',
                 'clone' => true,
-                'sort_clone' => true,
+                //'sort_clone' => true,
                 'fields' => $fields_array,    
             ),
         ),

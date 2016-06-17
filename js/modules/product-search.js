@@ -40,21 +40,28 @@ var prodSearch = {
             imgContainer = jshtml('div',{class : 'result-img'},[img]),
             
             header = jshtml('h3',{class: 'result-title',} , prodSearch.strHiglight(data.title, term)),
-            desc = jshtml('div',{class: 'result-desc'},prodSearch.strHiglight(data.desc, term));
+            desc = jshtml('div',{class: 'result-desc'},prodSearch.strHiglight(data.desc, term)),
             
             vars = '';
-            data.vars.forEach(function(i){
-                vars += jshtml('span',{class: 'result-variation'},i);
-            });
+        data.vars.forEach(function(i){
+            vars += jshtml('span',{class: 'result-variation'},i);
+        });
+
+        var footer = jshtml('footer',{class: 'result-footer'},vars),
+            textContainer = jshtml('div',{class: 'result-text'}, [header,desc,footer]);
+
+        var downloadData = '';
+        if(data.downloads.data){
+            downloadData = jshtml('div',{class: 'download-link download-data','data-href' : data.downloads.data },'Hent Datablad');
+        }
+        var downloadApprove = '';
+        if(data.downloads.approve){
+            downloadApprove = jshtml('div',{class: 'download-link download-approve', 'data-href' : data.downloads.approve},'Hent Godkendelser');
+        }
             
-            var footer = jshtml('footer',{class: 'result-footer'},vars),
-            textContainer = jshtml('div',{class: 'result-text'}, [header,desc,footer]),
-            
-            downloadData = jshtml('div',{class: 'download-link download-data','data-href' : data.downloads.data },'Hent Datablad'),
-            downloadApprove = jshtml('div',{class: 'download-link download-approve', 'data-href' : data.downloads.approve},'Hent Godkendelser'),
-                
-            linksContainer = jshtml('div',{class: 'result-links'},[downloadData,downloadApprove]),
-            
+
+        var linksContainer = jshtml('div',{class: 'result-links'},[downloadData,downloadApprove]),
+
             containerInner = jshtml('div',{class: 'inner'}, [imgContainer, textContainer, linksContainer]),
             container = jshtml('a', {class: 'result result-'+id, href: data.permalink} , [containerInner] );
         
