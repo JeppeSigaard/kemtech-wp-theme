@@ -9,6 +9,6 @@ function gowp_nav_remove_empty_terms ( $items, $menu, $args ) {
                 unset( $items[$key] );
             }
         }
-        return $items;
     }
+    return $items;
 }
